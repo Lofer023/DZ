@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	float x, f, g;
+	printf("Введите значение x: ");
+	scanf("%f", &x);
+	f = exp(-fabs(x)) * sin(x);
+	g = exp(-fabs(x)) * cos(x);
+	printf("f(x) = %f", f);
+	printf("g(x) = %f", g);
+	return 0;
+}
