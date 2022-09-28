@@ -1,1 +1,1 @@
-# DZ_osy
+# Dz po predmety operatciini cuctemu
