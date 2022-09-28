@@ -1,0 +1,42 @@
+import random 
+chet = 5000 
+foo = ["0","1","2","3","4","5","6","7"]
+while True:
+ x = random.choice(foo)
+ y = random.choice(foo)
+ z = random.choice(foo)
+ ch = x + y + z
+ chet -=10
+ if ch == "000":
+   chet = chet+1
+ elif ch == "111":
+   chet = chet+2
+ elif ch == "222":
+   chet = chet+5
+ elif ch == "333":
+   chet = chet+10
+ elif ch == "444":
+   chet = chet+20
+ elif ch[0] == "5":
+   chet = chet+50
+ elif ch[0] == "5" and ch[1] == "5":
+   chet = chet + 100
+ elif ch == "555":
+   chet = chet + 200
+ elif ch[0] == "7":
+   chet = chet + 500
+ elif ch[1] == "7" and ch[2] == "7":
+   chet = chet + 1000
+ elif ch == "777":
+   chet = chet + 1000000
+   print(chet)
+   print("Win")
+   break
+ elif ch == "666":
+  chet = chet - 35000
+  if chet <= 0:
+     print(ch)
+     print(chet)
+     print("Lose")
+     break
+ print(ch)
