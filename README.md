@@ -1,1 +1,2 @@
-# Dz po predmety operatciini cuctemu
+# Dz
+S.N.KY-31
