@@ -1,0 +1,142 @@
+#include <stdio.h>
+
+#include <math.h>
+
+
+void input_arr(double *arr,const int size){
+
+for(int i = 0; i < size; i++){
+
+ printf("arr[%d]:",i );
+
+ scanf("%f",&arr[i]);
+
+}
+
+}
+
+
+void print_arr(double *arr,const int size){
+
+for(int i = 0; i < size; i++){
+
+ printf("%f\t",arr[i]);
+
+}
+
+printf("\n");
+
+}
+
+
+double average(double *arr,const int size){
+
+double aver = 0;
+
+for(int i = 0; i < size; i++){
+
+ aver += arr[i];
+
+}
+
+return aver / size;
+
+}
+
+
+int count(double *arr,const int size){
+
+double aver = average(arr,size);
+
+int counter = 0;
+
+for(int i = 0; i < size; i++){
+
+ if(arr[i] > aver){
+
+  counter++;
+
+ }
+
+}
+
+return counter;
+
+}
+
+
+int position_first_negative(double *arr,const int size){
+
+int index;
+
+for(int i = 0; i < size; i++){
+
+ if(arr[i] < 0){
+
+  index = i;
+
+  break;
+
+ }
+
+}
+
+return index;
+
+}
+
+
+double sum(double *arr,const int size){
+
+double sum_abs = 0;
+
+int first_negative = position_first_negative(arr,size);
+
+if(first_negative == 0 && arr[0] > 0){
+
+ printf("Negative elements is not found\n");
+
+}
+
+else{
+
+ for(int i = first_negative + 1; i < size; i++){
+
+  sum_abs += fabs(arr[i]);  
+
+ }
+
+ return sum_abs;
+
+}
+
+}
+
+
+int main(){
+
+int size;
+
+printf("Enter a size: ");
+
+scanf("%d",&size);
+
+double *arr = new double[size];
+
+
+input_arr(arr,size);
+
+print_arr(arr,size);
+
+
+printf("Count elements:%d\n ",count(arr,size));
+
+printf("Sum abs:%f",sum(arr,size));
+
+
+delete[] arr;
+
+
+return 0;
+
+}
